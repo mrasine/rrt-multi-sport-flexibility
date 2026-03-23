@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessibility Statement | Rhythmic Ribbon of Texas</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rrt-gold: #d4af37;
+      --rrt-soft-gold: #f6e6c8;
+      --rrt-cream: #fdf8ef;
+      --rrt-muted-light: rgba(253, 248, 239, 0.7);
+      --rrt-bg: #020308;
+      --rrt-surface: #0a0d18;
+      --rrt-text: #f0e6d3;
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-body);
+      background: linear-gradient(180deg, rgba(212, 175, 55, 0.08) 0%, rgba(212, 175, 55, 0.03) 100%), var(--rrt-bg);
+      background-attachment: fixed;
+      color: var(--rrt-text);
+      min-height: 100vh;
+      line-height: 1.7;
+    }
+    a { color: var(--rrt-gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav {
+      background: rgba(5, 7, 13, 0.98);
+      backdrop-filter: blur(14px);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .nav-logo img {
+      border-radius: 8px;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+    }
+    .nav-brand {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--rrt-cream);
+    }
+    .nav-brand span { color: var(--rrt-gold); }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+    .page-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--rrt-gold);
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+    .last-updated {
+      color: var(--rrt-muted-light);
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--rrt-cream);
+      margin: 2.5rem 0 1rem;
+    }
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--rrt-soft-gold);
+      margin: 1.5rem 0 0.75rem;
+    }
+    p { margin-bottom: 1rem; }
+    ul { margin: 1rem 0 1rem 1.5rem; }
+    li { margin-bottom: 0.5rem; }
+    .contact-card {
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .contact-card h3 { margin-top: 0; }
+    .footer {
+      background: rgba(5, 7, 13, 0.95);
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      padding: 2rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 1rem 0;
+      flex-wrap: wrap;
+    }
+    .footer-links a { color: var(--rrt-muted-light); font-size: 0.9rem; }
+    .footer-links a:hover { color: var(--rrt-gold); }
+    .footer-copy { color: var(--rrt-muted-light); font-size: 0.85rem; }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--rrt-gold);
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+    .checklist {
+      list-style: none;
+      padding-left: 0;
+    }
+    .checklist li {
+      padding-left: 2rem;
+      position: relative;
+    }
+    .checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--rrt-gold);
+    }
+    .not-met {
+      color: rgba(242, 108, 79, 0.9);
+    }
+    .not-met::before {
+      content: "○" !important;
+      color: rgba(242, 108, 79, 0.9) !important;
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-logo">
+      <img src="rrt-logo.png" alt="RRT Logo" width="40" height="40">
+      <span class="nav-brand">Rhythmic Ribbon of <span>Texas</span></span>
+    </div>
+  </nav>
+
+  <main class="container">
+    <a href="index.html" class="back-link">&#8592; Back to Home</a>
+    
+    <h1 class="page-title">Accessibility Statement</h1>
+    <p class="last-updated">Last Updated: March 23, 2026</p>
+
+    <h2>Our Commitment</h2>
+    <p>Rhythmic Ribbon of Texas is committed to ensuring digital accessibility for people with disabilities. We strive to make our website accessible to all users, including those who use assistive technologies.</p>
+
+    <h2>Accessibility Features</h2>
+    <p>Our website includes the following accessibility features:</p>
+    <ul class="checklist">
+      <li>Semantic HTML structure with proper heading hierarchy</li>
+      <li>Alt text for meaningful images</li>
+      <li>Keyboard navigation support for all interactive elements</li>
+      <li>Sufficient color contrast ratios for text readability</li>
+      <li>Font sizes that can be resized using browser controls</li>
+      <li>Skip navigation links for screen reader users</li>
+      <li>Labels and instructions for form inputs</li>
+      <li>ARIA landmarks and roles where appropriate</li>
+      <li>Focus indicators for interactive elements</li>
+      <li>No content that flashes more than 3 times per second</li>
+    </ul>
+
+    <h2>Conformance Status</h2>
+    <p>We aim to conform to the <a href="https://www.w3.org/TR/WCAG21/" target="_blank" rel="noopener">Web Content Accessibility Guidelines (WCAG) 2.1</a> at Level AA. These guidelines explain how to make web content more accessible for people with disabilities and more user-friendly for everyone.</p>
+    
+    <p>While we work toward full conformance, you may notice some areas that are not yet fully accessible. We are continuously improving our website's accessibility.</p>
+
+    <h2>Known Limitations</h2>
+    <p>We are aware of the following areas where accessibility could be improved:</p>
+    <ul class="checklist">
+      <li class="not-met">Some older images may not have complete alt text</li>
+      <li class="not-met">Third-party content (such as Formspree forms) may not be fully under our control</li>
+      <li class="not-met">Video content does not yet include captions</li>
+      <li class="not-met">Some interactive elements may benefit from additional keyboard support</li>
+    </ul>
+
+    <h2>Assistive Technology Compatibility</h2>
+    <p>Our website is designed to be compatible with:</p>
+    <ul>
+      <li>Screen readers (NVDA, JAWS, VoiceOver, TalkBack)</li>
+      <li>Screen magnification software</li>
+      <li>Speech recognition software</li>
+      <li>Keyboard-only navigation</li>
+    </ul>
+
+    <h2>How to Request Content in an Accessible Format</h2>
+    <p>If you have difficulty accessing any content on our website or need a document in an alternative format, please contact us:</p>
+    <ul>
+      <li>Email: <a href="mailto:Rhythmicribbonoftexas@gmail.com">Rhythmicribbonoftexas@gmail.com</a></li>
+      <li>Phone: <a href="tel:+17186892469">(718) 689-2469</a></li>
+    </ul>
+    <p>We will endeavor to provide the information in a format that meets your needs.</p>
+
+    <h2>Enforcement Procedure</h2>
+    <p>If you are not satisfied with our response to a complaint regarding the accessibility of our website, you may submit feedback or file a complaint through one of the following channels:</p>
+    <ul>
+      <li>Contact us directly using the information above</li>
+      <li>If you encounter accessibility issues, please describe them in as much detail as possible</li>
+    </ul>
+
+    <h2>Technical Information</h2>
+    <p>Accessibility of this website relies on the following technologies:</p>
+    <ul>
+      <li>HTML (HyperText Markup Language)</li>
+      <li>CSS (Cascading Style Sheets)</li>
+      <li>JavaScript (for interactive elements)</li>
+      <li>ARIA (Accessible Rich Internet Applications)</li>
+    </ul>
+    <p>These technologies are used in combination with assistive technology to conform to accessibility standards.</p>
+
+    <h2>Third-Party Content</h2>
+    <p>Our website includes links to third-party content and services. While we encourage third-party providers to provide accessible content, we cannot guarantee the accessibility of external sites.</p>
+
+    <h2>Ongoing Efforts</h2>
+    <p>We are continuously working to improve the accessibility of our website. This includes:</p>
+    <ul>
+      <li>Regular audits of our website using automated and manual testing tools</li>
+      <li>Incorporating accessibility into our design and development processes</li>
+      <li>Training our team on web accessibility best practices</li>
+      <li>Reviewing and updating this accessibility statement periodically</li>
+    </ul>
+
+    <h2>Feedback and Contact</h2>
+    <div class="contact-card">
+      <h3>We Welcome Your Feedback</h3>
+      <p>Your accessibility concerns and suggestions help us improve. If you encounter any barriers while using our website, please let us know:</p>
+      <p>Email: <a href="mailto:Rhythmicribbonoftexas@gmail.com">Rhythmicribbonoftexas@gmail.com</a></p>
+      <p>Phone: <a href="tel:+17186892469">(718) 689-2469</a></p>
+      <p>Location: McKinney, Texas</p>
+      <p style="margin-bottom: 0;">We aim to respond to accessibility feedback within 5 business days.</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <img src="rrt-logo.png" alt="RRT Logo" width="50" height="50" style="border-radius: 10px; border: 1px solid rgba(212, 175, 55, 0.5); margin-bottom: 0.75rem;">
+    <p style="color: var(--rrt-cream); font-weight: 600;">Rhythmic Ribbon of Texas</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="liability-waiver.html">Liability Waiver</a>
+      <a href="accessibility-statement.html">Accessibility</a>
+    </div>
+    <p class="footer-copy">Serving the Dallas-Fort Worth Area | McKinney, Texas</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service | Rhythmic Ribbon of Texas</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rrt-gold: #d4af37;
+      --rrt-soft-gold: #f6e6c8;
+      --rrt-cream: #fdf8ef;
+      --rrt-muted-light: rgba(253, 248, 239, 0.7);
+      --rrt-bg: #020308;
+      --rrt-surface: #0a0d18;
+      --rrt-text: #f0e6d3;
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-body);
+      background: linear-gradient(180deg, rgba(212, 175, 55, 0.08) 0%, rgba(212, 175, 55, 0.03) 100%), var(--rrt-bg);
+      background-attachment: fixed;
+      color: var(--rrt-text);
+      min-height: 100vh;
+      line-height: 1.7;
+    }
+    a { color: var(--rrt-gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav {
+      background: rgba(5, 7, 13, 0.98);
+      backdrop-filter: blur(14px);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .nav-logo img {
+      border-radius: 8px;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+    }
+    .nav-brand {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--rrt-cream);
+    }
+    .nav-brand span { color: var(--rrt-gold); }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+    .page-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--rrt-gold);
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+    .last-updated {
+      color: var(--rrt-muted-light);
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--rrt-cream);
+      margin: 2.5rem 0 1rem;
+    }
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--rrt-soft-gold);
+      margin: 1.5rem 0 0.75rem;
+    }
+    p { margin-bottom: 1rem; }
+    ul { margin: 1rem 0 1rem 1.5rem; }
+    li { margin-bottom: 0.5rem; }
+    .contact-card {
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .contact-card h3 { margin-top: 0; }
+    .footer {
+      background: rgba(5, 7, 13, 0.95);
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      padding: 2rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 1rem 0;
+      flex-wrap: wrap;
+    }
+    .footer-links a { color: var(--rrt-muted-light); font-size: 0.9rem; }
+    .footer-links a:hover { color: var(--rrt-gold); }
+    .footer-copy { color: var(--rrt-muted-light); font-size: 0.85rem; }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--rrt-gold);
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+    .highlight-box {
+      background: rgba(212, 175, 55, 0.08);
+      border-left: 3px solid var(--rrt-gold);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-logo">
+      <img src="rrt-logo.png" alt="RRT Logo" width="40" height="40">
+      <span class="nav-brand">Rhythmic Ribbon of <span>Texas</span></span>
+    </div>
+  </nav>
+
+  <main class="container">
+    <a href="index.html" class="back-link">&#8592; Back to Home</a>
+    
+    <h1 class="page-title">Terms of Service</h1>
+    <p class="last-updated">Last Updated: March 23, 2026</p>
+
+    <div class="highlight-box">
+      <p style="margin-bottom: 0;"><strong>Important:</strong> By using our website and services, you agree to these Terms of Service. Please read them carefully before using our flexibility training services.</p>
+    </div>
+
+    <h2>1. Acceptance of Terms</h2>
+    <p>By accessing or using Rhythmic Ribbon of Texas's website and flexibility training services, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using our services.</p>
+
+    <h2>2. Services Description</h2>
+    <p>Rhythmic Ribbon of Texas provides flexibility training services including but not limited to:</p>
+    <ul>
+      <li>Group master classes for gymnasts and athletes</li>
+      <li>One-on-one flexibility training sessions</li>
+      <li>Training programs for studios, gyms, and facilities</li>
+      <li>Expert guidance in rhythmic gymnastics flexibility techniques</li>
+    </ul>
+
+    <h2>3. User Responsibilities</h2>
+    <p>When using our services, you agree to:</p>
+    <ul>
+      <li>Provide accurate and complete information when submitting inquiries</li>
+      <li>Use our services only for lawful purposes</li>
+      <li>Not misuse, abuse, or interfere with our website or services</li>
+      <li>Inform us of any medical conditions that may affect your ability to participate in flexibility training</li>
+      <li>Follow all safety instructions provided during training sessions</li>
+    </ul>
+
+    <h2>4. Physical Activity and Health Disclaimer</h2>
+    <p>Flexibility training involves physical activity that carries inherent risks including but not limited to:</p>
+    <ul>
+      <li>Muscle strains and tears</li>
+      <li>Joint injuries</li>
+      <li>Ligament damage</li>
+      <li>Overextension injuries</li>
+      <li>Other physical ailments</li>
+    </ul>
+    <p>By participating in our training programs, you acknowledge and accept these risks. Please see our <a href="liability-waiver.html">Liability Waiver</a> for complete information.</p>
+
+    <h2>5. Medical Clearance</h2>
+    <p>You represent and warrant that:</p>
+    <ul>
+      <li>You are physically fit and have no medical condition that would prevent participation in flexibility training</li>
+      <li>You have consulted with a physician regarding any existing conditions before beginning our training program</li>
+      <li>You will immediately inform your trainer of any discomfort, pain, or medical condition during training</li>
+    </ul>
+
+    <h2>6. Scheduling and Cancellation</h2>
+    <p>For scheduled training sessions:</p>
+    <ul>
+      <li>Please provide at least 24 hours notice for cancellations</li>
+      <li>We reserve the right to charge for sessions cancelled with less than 24 hours notice</li>
+      <li>Rescheduling is subject to trainer availability</li>
+    </ul>
+
+    <h2>7. Payment Terms</h2>
+    <p>Payment terms for services will be communicated prior to the commencement of training. We accept various payment methods as discussed during booking.</p>
+
+    <h2>8. Intellectual Property</h2>
+    <p>All content on our website, including but not limited to text, graphics, logos, images, and training materials, is the property of Rhythmic Ribbon of Texas or its content suppliers and is protected by copyright and other intellectual property laws.</p>
+    <p>You may not reproduce, distribute, modify, or create derivative works from our materials without express written permission.</p>
+
+    <h2>9. Privacy</h2>
+    <p>Your privacy is important to us. Please review our <a href="privacy-policy.html">Privacy Policy</a> to understand how we collect, use, and protect your personal information.</p>
+
+    <h2>10. Limitation of Liability</h2>
+    <p>To the fullest extent permitted by law, Rhythmic Ribbon of Texas and its owners, coaches, and agents shall not be liable for any direct, indirect, incidental, special, consequential, or punitive damages arising from:</p>
+    <ul>
+      <li>Your use of or inability to use our services</li>
+      <li>Any content obtained from our services</li>
+      <li>Unauthorized access to your personal data</li>
+      <li>Training-related injuries (subject to applicable law)</li>
+    </ul>
+
+    <h2>11. No Guarantees</h2>
+    <p>While we are committed to providing expert flexibility training, we do not guarantee specific results. Individual progress varies based on factors including but not limited to:</p>
+    <ul>
+      <li>Age and physical condition</li>
+      <li>Consistency of training</li>
+      <li>Individual body limitations</li>
+      <li>Nutrition and recovery</li>
+    </ul>
+
+    <h2>12. Testimonials and Reviews</h2>
+    <p>Any testimonials, reviews, or success stories displayed on our website represent individual experiences and are not guarantees of similar results for others.</p>
+
+    <h2>13. Third-Party Links</h2>
+    <p>Our website may contain links to third-party websites. We are not responsible for the content, accuracy, or opinions expressed on these external sites.</p>
+
+    <h2>14. Termination</h2>
+    <p>We reserve the right to terminate or suspend your access to our services at our sole discretion, without notice, for conduct that violates these Terms of Service or is harmful to other users or third parties.</p>
+
+    <h2>15. Governing Law</h2>
+    <p>These Terms of Service shall be governed by and construed in accordance with the laws of the State of Texas, without regard to its conflict of law provisions. Any disputes shall be resolved in the courts of Texas.</p>
+
+    <h2>16. Changes to Terms</h2>
+    <p>We reserve the right to modify these Terms of Service at any time. Changes will be effective immediately upon posting on this website. Your continued use of our services after any changes constitutes acceptance of the modified terms.</p>
+
+    <h2>17. Severability</h2>
+    <p>If any provision of these Terms of Service is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall remain in full force and effect.</p>
+
+    <h2>18. Contact Information</h2>
+    <div class="contact-card">
+      <h3>Questions About These Terms</h3>
+      <p>If you have any questions about these Terms of Service, please contact us:</p>
+      <p>Email: <a href="mailto:Rhythmicribbonoftexas@gmail.com">Rhythmicribbonoftexas@gmail.com</a></p>
+      <p>Phone: <a href="tel:+17186892469">(718) 689-2469</a></p>
+      <p>Location: McKinney, Texas</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <img src="rrt-logo.png" alt="RRT Logo" width="50" height="50" style="border-radius: 10px; border: 1px solid rgba(212, 175, 55, 0.5); margin-bottom: 0.75rem;">
+    <p style="color: var(--rrt-cream); font-weight: 600;">Rhythmic Ribbon of Texas</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="liability-waiver.html">Liability Waiver</a>
+      <a href="accessibility-statement.html">Accessibility</a>
+    </div>
+    <p class="footer-copy">Serving the Dallas-Fort Worth Area | McKinney, Texas</p>
+  </footer>
+</body>
+</html>

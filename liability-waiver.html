@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liability Waiver | Rhythmic Ribbon of Texas</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rrt-gold: #d4af37;
+      --rrt-soft-gold: #f6e6c8;
+      --rrt-cream: #fdf8ef;
+      --rrt-muted-light: rgba(253, 248, 239, 0.7);
+      --rrt-bg: #020308;
+      --rrt-surface: #0a0d18;
+      --rrt-text: #f0e6d3;
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-body);
+      background: linear-gradient(180deg, rgba(212, 175, 55, 0.08) 0%, rgba(212, 175, 55, 0.03) 100%), var(--rrt-bg);
+      background-attachment: fixed;
+      color: var(--rrt-text);
+      min-height: 100vh;
+      line-height: 1.7;
+    }
+    a { color: var(--rrt-gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav {
+      background: rgba(5, 7, 13, 0.98);
+      backdrop-filter: blur(14px);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .nav-logo img {
+      border-radius: 8px;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+    }
+    .nav-brand {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--rrt-cream);
+    }
+    .nav-brand span { color: var(--rrt-gold); }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+    .page-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--rrt-gold);
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+    .last-updated {
+      color: var(--rrt-muted-light);
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--rrt-cream);
+      margin: 2.5rem 0 1rem;
+    }
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--rrt-soft-gold);
+      margin: 1.5rem 0 0.75rem;
+    }
+    p { margin-bottom: 1rem; }
+    ul { margin: 1rem 0 1rem 1.5rem; }
+    li { margin-bottom: 0.5rem; }
+    .contact-card {
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .contact-card h3 { margin-top: 0; }
+    .footer {
+      background: rgba(5, 7, 13, 0.95);
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      padding: 2rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 1rem 0;
+      flex-wrap: wrap;
+    }
+    .footer-links a { color: var(--rrt-muted-light); font-size: 0.9rem; }
+    .footer-links a:hover { color: var(--rrt-gold); }
+    .footer-copy { color: var(--rrt-muted-light); font-size: 0.85rem; }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--rrt-gold);
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+    .warning-box {
+      background: rgba(242, 108, 79, 0.15);
+      border: 1px solid rgba(242, 108, 79, 0.4);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .warning-box h3 {
+      color: #f26c4f;
+      margin-top: 0;
+    }
+    .numbered-section {
+      counter-reset: section;
+    }
+    .numbered-section li {
+      list-style: none;
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+    }
+    .numbered-section li::before {
+      counter-increment: section;
+      content: counter(section);
+      position: absolute;
+      left: 0;
+      color: var(--rrt-gold);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-logo">
+      <img src="rrt-logo.png" alt="RRT Logo" width="40" height="40">
+      <span class="nav-brand">Rhythmic Ribbon of <span>Texas</span></span>
+    </div>
+  </nav>
+
+  <main class="container">
+    <a href="index.html" class="back-link">&#8592; Back to Home</a>
+    
+    <h1 class="page-title">Liability Waiver & Assumption of Risk</h1>
+    <p class="last-updated">Last Updated: March 23, 2026</p>
+
+    <div class="warning-box">
+      <h3>Important Legal Information</h3>
+      <p style="margin-bottom: 0;">This document contains important legal terms. By participating in any flexibility training services offered by Rhythmic Ribbon of Texas, you acknowledge that you have read, understood, and agree to be bound by this Liability Waiver and Assumption of Risk agreement.</p>
+    </div>
+
+    <h2>1. Acknowledgment of Risks</h2>
+    <p>Flexibility training and rhythmic gymnastics activities involve inherent risks, hazards, and dangers that cannot be eliminated. By participating in training with Rhythmic Ribbon of Texas, you voluntarily assume all risks of injury, harm, or loss that may occur during or after training sessions.</p>
+    
+    <p>These risks include but are not limited to:</p>
+    <ul>
+      <li>Muscle strains, pulls, and tears</li>
+      <li>Ligament sprains and tears</li>
+      <li>Joint injuries including sprains and dislocations</li>
+      <li>Bone fractures and stress fractures</li>
+      <li>Overextension and hyperextension injuries</li>
+      <li>Back and spine injuries</li>
+      <li>Neck injuries</li>
+      <li>Bruises, cuts, and abrasions</li>
+      <li>Falls and impact injuries</li>
+      <li>Equipment-related injuries</li>
+      <li>Heat-related illnesses</li>
+      <li>Cardiovascular stress</li>
+      <li>Neurological injuries</li>
+      <li>Paralysis or permanent disability</li>
+      <li>Death</li>
+    </ul>
+
+    <h2>2. Physical Condition Representation</h2>
+    <p>You represent and warrant that:</p>
+    <ul class="numbered-section">
+      <li>You are physically fit and have no existing medical condition that would prevent safe participation in flexibility training</li>
+      <li>You have received and will continue to receive regular medical check-ups as recommended by your physician</li>
+      <li>You will immediately disclose any injury, illness, or physical limitation to your trainer before or during any training session</li>
+      <li>You will not participate in training while under the influence of alcohol, drugs, or any substance that could impair your judgment or physical ability</li>
+      <li>You understand that flexibility training requires progressive conditioning and you will not force your body beyond its current capabilities</li>
+    </ul>
+
+    <h2>3. Medical Clearance</h2>
+    <p>You acknowledge that you should consult with a qualified medical professional before beginning any flexibility training program. This is especially important if you:</p>
+    <ul>
+      <li>Have a history of joint, muscle, or bone injuries</li>
+      <li>Have been diagnosed with osteoporosis or other bone conditions</li>
+      <li>Have cardiovascular conditions</li>
+      <li>Have hypertension or low blood pressure</li>
+      <li>Are pregnant or recently gave birth</li>
+      <li>Have any chronic medical conditions</li>
+      <li>Are taking medications that may affect physical performance</li>
+    </ul>
+
+    <h2>4. Proper Technique and Supervision</h2>
+    <p>You agree to:</p>
+    <ul>
+      <li>Follow all instructions provided by your trainer regarding proper technique and form</li>
+      <li>Ask questions if you do not understand any instruction</li>
+      <li>Immediately stop training if you experience pain, dizziness, nausea, or any unusual symptoms</li>
+      <li>Not attempt advanced techniques without proper preparation and supervision</li>
+      <li>Use equipment only as instructed</li>
+    </ul>
+
+    <h2>5. Release and Waiver of Liability</h2>
+    <p>To the fullest extent permitted by applicable law, you hereby:</p>
+    <ul>
+      <li><strong>WAIVE, RELEASE, AND DISCHARGE</strong> Rhythmic Ribbon of Texas, its owner(s), coaches, employees, agents, and representatives from any and all claims, demands, or causes of action arising from or related to any injury, harm, or loss you may suffer during or as a result of training</li>
+      <li><strong>COVENANT NOT TO SUE</strong> Rhythmic Ribbon of Texas or any of its associated parties for any injury or damages arising from your participation in training activities</li>
+      <li><strong>ACKNOWLEDGE</strong> that this waiver covers injuries caused in whole or in part by the negligence of Rhythmic Ribbon of Texas, its employees, or agents, except where such negligence amounts to gross negligence or intentional misconduct</li>
+    </ul>
+
+    <h2>6. Indemnification</h2>
+    <p>You agree to indemnify, defend, and hold harmless Rhythmic Ribbon of Texas and its owner(s), coaches, employees, and agents from and against any and all claims, damages, losses, costs, and expenses (including reasonable attorney fees) arising from:</p>
+    <ul>
+      <li>Your negligent or wrongful conduct during training</li>
+      <li>Your violation of these terms or any instructions provided by your trainer</li>
+      <li>Any injury to yourself or others caused by your actions during training</li>
+    </ul>
+
+    <h2>7. For Parents/Guardians of Minors</h2>
+    <p>If the participant is under 18 years of age, the parent or legal guardian must:</p>
+    <ul>
+      <li>Read and agree to all terms of this waiver on behalf of the minor participant</li>
+      <li>Understand that the minor will be participating in physical activities with inherent risks</li>
+      <li>Accept responsibility for monitoring the minor's physical condition before and during training</li>
+      <li>Agree to indemnify and hold harmless Rhythmic Ribbon of Texas as outlined in Section 6</li>
+    </ul>
+
+    <h2>8. For Studio/Gym/Facility Owners</h2>
+    <p>By inquiring about or scheduling group training services, you represent and warrant that:</p>
+    <ul>
+      <li>You have the legal authority to bind your organization to this waiver</li>
+      <li>All participants under your supervision have been informed of the risks involved</li>
+      <li>You have obtained or will obtain appropriate waivers from all participants before training commences</li>
+      <li>Your facility meets all applicable safety standards and requirements</li>
+      <li>You accept responsibility for ensuring a safe training environment</li>
+    </ul>
+
+    <h2>9. Insurance</h2>
+    <p>You acknowledge that Rhythmic Ribbon of Texas does not carry liability insurance for participants. You are encouraged to maintain your own personal liability and health insurance coverage.</p>
+
+    <h2>10. Severability</h2>
+    <p>If any provision of this waiver is found to be unenforceable, the remaining provisions shall continue in full force and effect.</p>
+
+    <h2>11. Entire Agreement</h2>
+    <p>This waiver, together with our <a href="terms-of-service.html">Terms of Service</a> and <a href="privacy-policy.html">Privacy Policy</a>, constitutes the entire agreement between you and Rhythmic Ribbon of Texas regarding the subject matter hereof.</p>
+
+    <h2>Questions?</h2>
+    <div class="contact-card">
+      <h3>Before Starting Training</h3>
+      <p>We strongly encourage all participants to:</p>
+      <ul>
+        <li>Consult with a physician before beginning any new exercise program</li>
+        <li>Obtain personal liability insurance if available through your homeowner's or renter's policy</li>
+        <li>Review your health insurance coverage for athletic activities</li>
+      </ul>
+      <p>If you have questions about this waiver, please contact us before participating:</p>
+      <p>Email: <a href="mailto:Rhythmicribbonoftexas@gmail.com">Rhythmicribbonoftexas@gmail.com</a></p>
+      <p>Phone: <a href="tel:+17186892469">(718) 689-2469</a></p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <img src="rrt-logo.png" alt="RRT Logo" width="50" height="50" style="border-radius: 10px; border: 1px solid rgba(212, 175, 55, 0.5); margin-bottom: 0.75rem;">
+    <p style="color: var(--rrt-cream); font-weight: 600;">Rhythmic Ribbon of Texas</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="liability-waiver.html">Liability Waiver</a>
+      <a href="accessibility-statement.html">Accessibility</a>
+    </div>
+    <p class="footer-copy">Serving the Dallas-Fort Worth Area | McKinney, Texas</p>
+  </footer>
+</body>
+</html>

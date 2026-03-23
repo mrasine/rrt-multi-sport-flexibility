@@ -175,6 +175,103 @@
       opacity: 0.8;
     }
 
+    /* Hero entrance animation */
+    @keyframes heroFadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero h1 {
+      opacity: 0;
+      animation: heroFadeUp 0.9s ease forwards;
+      animation-delay: 0.2s;
+    }
+
+    .hero-subtitle {
+      opacity: 0;
+      animation: heroFadeUp 0.9s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    .hero .cta-button {
+      opacity: 0;
+      animation: heroFadeUp 0.9s ease forwards;
+      animation-delay: 0.8s;
+    }
+
+    /* CTA pulse glow */
+    @keyframes subtlePulse {
+      0%, 100% { box-shadow: 0 8px 20px rgba(212, 175, 55, 0.35), 0 0 0 0 rgba(212, 175, 55, 0.4); }
+      50% { box-shadow: 0 8px 20px rgba(212, 175, 55, 0.35), 0 0 0 8px rgba(212, 175, 55, 0); }
+    }
+
+    /* Scroll-triggered reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-stagger-1 { transition-delay: 0.15s; }
+    .reveal-stagger-2 { transition-delay: 0.3s; }
+    .reveal-stagger-3 { transition-delay: 0.45s; }
+    .reveal-stagger-4 { transition-delay: 0.6s; }
+
+    /* Header scroll effect */
+    .nav-scrolled {
+      background: rgba(5, 9, 20, 0.92) !important;
+      backdrop-filter: blur(16px) !important;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Scroll-to-top button */
+    .scroll-top-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      background: var(--rrt-gold);
+      color: var(--rrt-bg);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+      z-index: 90;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    .scroll-top-btn.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    .scroll-top-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto !important; }
+      .hero h1, .hero-subtitle, .hero .cta-button {
+        opacity: 1 !important;
+        animation: none !important;
+      }
+      .cta-button { animation: none !important; }
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+
     /* Navigation */
     nav {
       background: var(--rrt-surface);
@@ -187,6 +284,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
+      transition: background 0.35s ease, backdrop-filter 0.35s ease, box-shadow 0.35s ease;
     }
 
     .nav-logo {
@@ -279,6 +377,7 @@
       box-shadow: 0 8px 20px rgba(212, 175, 55, 0.35);
       position: relative;
       overflow: hidden;
+      animation: subtlePulse 2.5s ease-in-out infinite;
     }
 
     .cta-button::after {
@@ -469,13 +568,13 @@
       padding: 2rem;
       text-align: center;
       border: 1px solid var(--rrt-border);
-      transition: all 0.2s;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
     }
 
     .offering-card:hover {
       transform: translateY(-4px);
-      border-color: var(--rrt-gold);
-      box-shadow: 0 0 30px rgba(212, 175, 55, 0.25), 0 15px 40px rgba(0, 0, 0, 0.3);
+      border-color: rgba(212, 175, 55, 0.4);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 175, 55, 0.12);
     }
 
     .offering-icon {
@@ -556,6 +655,13 @@
       border-radius: var(--radius-lg);
       padding: 2rem;
       border: 1px solid var(--rrt-border);
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(212, 175, 55, 0.4);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 175, 55, 0.12);
     }
 
     .testimonial-stars {
@@ -945,7 +1051,7 @@
     <section class="for-studios">
       <div class="container">
         <h2 class="section-title">Bring Expert Flexibility Training to Your Athletes</h2>
-        <div class="split-grid">
+        <div class="split-grid reveal">
           <div>
             <p class="studios-intro">As a former professional rhythmic gymnast, flexibility and strengthening were essential components of Ella Rasin's daily training. When she transitioned into coaching, she recognized that every child has a different level of mobility, strength, and body awareness. That is how the Multi-Sport Flexibility program was developed - to address both flexibility and strength in a professional, systematic way while respecting individual differences.</p>
             <ul class="benefit-list">
@@ -967,7 +1073,7 @@
     <section class="philosophy">
       <div class="container">
         <h2 class="section-title">The Approach</h2>
-        <div class="philosophy-content">
+        <div class="philosophy-content reveal">
           <blockquote class="philosophy-quote">"This program is not simply about becoming more flexible. It is about building intelligent flexibility supported by strength, stability, and technical understanding so each athlete can confidently work toward their personal goals."</blockquote>
           <p class="philosophy-text">When properly trained, improved flexibility leads to better agility, speed, power output, and muscular control. Athletes experience better technique execution, reduced risk of injury, and higher overall performance. Every session uses safe, progressive, and evidence-based methods that prioritize proper alignment, controlled strengthening, and long-term joint health.</p>
         </div>
@@ -979,7 +1085,7 @@
       <div class="container">
         <h2 class="section-title">Who Benefits</h2>
         <p class="who-subtitle">All levels are welcome. Classes are structured by body part and adapted to each athlete's current ability.</p>
-        <div class="audience-grid">
+        <div class="audience-grid reveal">
           <span class="audience-tag">Dance Studios</span>
           <span class="audience-tag">Gymnastics Clubs</span>
           <span class="audience-tag">Cheerleading Teams</span>
@@ -1000,7 +1106,7 @@
       <div class="container">
         <h2 class="section-title">What We Offer</h2>
         <div class="offering-grid">
-          <div class="offering-card">
+          <div class="offering-card reveal reveal-stagger-1">
             <div class="offering-icon">
               <svg width="32" height="32" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <circle cx="96" cy="80" r="36" stroke="#d4af37" stroke-width="12" fill="none"/>
@@ -1012,7 +1118,7 @@
             <h3>Group Master Classes</h3>
             <p>Full group sessions at your facility. Structured by body part - shoulders, back, hips, hamstrings, splits. For studios, gyms, and teams from dance to football to wrestling.</p>
           </div>
-          <div class="offering-card">
+          <div class="offering-card reveal reveal-stagger-2">
             <div class="offering-icon">
               <svg width="32" height="32" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <circle cx="128" cy="128" r="96" stroke="#d4af37" stroke-width="12" fill="none"/>
@@ -1023,7 +1129,7 @@
             <h3>One-on-One Training</h3>
             <p>Individualized attention for athletes who prefer a personalized development plan. Ideal for rehabilitation, sport-specific goals, or accelerated progress.</p>
           </div>
-          <div class="offering-card">
+          <div class="offering-card reveal reveal-stagger-3">
             <div class="offering-icon">
               <svg width="32" height="32" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <rect x="48" y="32" width="160" height="192" rx="12" stroke="#d4af37" stroke-width="12" fill="none"/>
@@ -1035,7 +1141,7 @@
             <h3>Custom Curriculum</h3>
             <p>Training programs designed around your athletes' sport, skill level, and specific needs. Whether your team plays football or performs ballet, we build the right plan.</p>
           </div>
-          <div class="offering-card">
+          <div class="offering-card reveal reveal-stagger-4">
             <div class="offering-icon">
               <svg width="32" height="32" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <circle cx="128" cy="96" r="40" stroke="#d4af37" stroke-width="10" fill="none"/>
@@ -1055,17 +1161,17 @@
       <div class="container">
         <h2 class="section-title">What Parents Say</h2>
         <div class="testimonial-grid">
-          <div class="testimonial-card">
+          <div class="testimonial-card reveal reveal-stagger-1">
             <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <p class="testimonial-text">"Miss Ella is the best!! I went to her stretching classes for years as a figure skater and she helped me improve both technical and artistic elements of my skating."</p>
             <p class="testimonial-author">Mandy Chiang</p>
           </div>
-          <div class="testimonial-card">
+          <div class="testimonial-card reveal reveal-stagger-2">
             <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <p class="testimonial-text">"Mrs. Ella is an excellent stretching coach. She has helped my daughter with her flexibility for figure skating skills and gymnastics."</p>
             <p class="testimonial-author">Wendy C</p>
           </div>
-          <div class="testimonial-card">
+          <div class="testimonial-card reveal reveal-stagger-3">
             <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <p class="testimonial-text">"She shows my dancer how to stretch properly and why she needs certain stretch and strength techniques. I definitely recommend to anyone looking for high quality training."</p>
             <p class="testimonial-author">Jennifer Allen</p>
@@ -1079,7 +1185,7 @@
       <div class="container">
         <h2 class="section-title">Get Started</h2>
         <p class="section-subtitle">Ready to bring expert flexibility training to your athletes?</p>
-        <div class="form-wrapper">
+        <div class="form-wrapper reveal">
           <h3 class="form-title">Schedule a Master Class</h3>
           <form id="contact-form" action="https://formspree.io/f/xpwzgvvn" method="POST">
             <!-- Honeypot for spam protection -->
@@ -1148,6 +1254,9 @@
     <button class="cookie-btn cookie-btn-accept" id="cookie-accept">Accept</button>
     <button class="cookie-btn cookie-btn-decline" id="cookie-decline">Decline</button>
   </div>
+
+  <!-- Scroll to top -->
+  <button class="scroll-top-btn" id="scroll-top" aria-label="Scroll to top">&#8593;</button>
 
   <!-- Footer -->
   <footer>
@@ -1257,6 +1366,45 @@
           banner.classList.add('hidden');
         });
       }
+
+      // Scroll-triggered reveals
+      var revealEls = document.querySelectorAll('.reveal');
+      if (revealEls.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        var revealObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08 });
+        revealEls.forEach(function(el) { revealObserver.observe(el); });
+      } else {
+        revealEls.forEach(function(el) { el.classList.add('visible'); });
+      }
+
+      // Header scroll effect
+      var nav = document.querySelector('nav');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 40) {
+          nav.classList.add('nav-scrolled');
+        } else {
+          nav.classList.remove('nav-scrolled');
+        }
+      }, { passive: true });
+
+      // Scroll-to-top button
+      var scrollBtn = document.getElementById('scroll-top');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+          scrollBtn.classList.add('visible');
+        } else {
+          scrollBtn.classList.remove('visible');
+        }
+      }, { passive: true });
+      scrollBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
 
       function loadTrackingScripts() {
         // Uncomment and replace with your IDs when ready:

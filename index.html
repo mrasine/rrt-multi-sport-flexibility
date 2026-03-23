@@ -3,12 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
   <title>Multi-Sport Flexibility Training | Rhythmic Ribbon of Texas</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <meta name="description" content="Host a Multi-Sport Flexibility master class at your studio, gym, or facility. Expert flexibility training for dancers, gymnasts, and athletes.">
+  <link rel="canonical" href="https://rrt-multi-sport-flexibility.vercel.app/">
+  <meta name="description" content="Host a Multi-Sport Flexibility master class at your studio, gym, or facility. Expert flexibility training for dancers, gymnasts, and athletes. Led by USAG-certified coach Ella Rasin.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Multi-Sport Flexibility Training | Rhythmic Ribbon of Texas">
+  <meta property="og:description" content="Host a master class at your studio, gym, or facility. Intelligent flexibility for dancers, gymnasts, and athletes.">
+  <meta property="og:image" content="https://rrt-multi-sport-flexibility.vercel.app/rrt-flexibility.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rrt-multi-sport-flexibility.vercel.app/">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Rhythmic Ribbon of Texas",
+    "description": "Multi-Sport Flexibility Training led by USAG-certified coach and National Team Coach Ella Rasin. Group master classes and one-on-one training for dancers, gymnasts, and athletes.",
+    "url": "https://www.rhythmicribbon.com",
+    "telephone": "+17186892469",
+    "email": "Rhythmicribbonoftexas@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "McKinney",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Ella Rasin",
+      "jobTitle": "Head Coach & Owner",
+      "description": "Former professional rhythmic gymnast, USAG-certified since 1991, National Team Coach, USAG RG Texas State Chair"
+    },
+    "areaServed": {
+      "@type": "Place",
+      "name": "Dallas-Fort Worth Metroplex"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Flexibility Training Services",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Group Master Classes"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "One-on-One Training"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Custom Curriculum Development"}}
+      ]
+    }
+  }
+  </script>
+
   <style>
     * {
       margin: 0;
@@ -29,10 +78,10 @@
       --rrt-border-strong: rgba(255, 255, 255, 0.18);
       --success: #7bdcb5;
       --error: #f26c4f;
-      
+
       --font-heading: 'Playfair Display', Georgia, serif;
       --font-body: 'DM Sans', -apple-system, sans-serif;
-      
+
       --radius-sm: 10px;
       --radius-lg: 20px;
       --radius-xl: 28px;
@@ -52,13 +101,12 @@
         radial-gradient(ellipse at 20% 0%, rgba(255, 214, 153, 0.08) 0%, transparent 50%),
         radial-gradient(ellipse at 80% 0%, rgba(87, 134, 255, 0.1) 0%, transparent 50%),
         linear-gradient(180deg, #04060d 0%, #080914 50%, #05060c 100%);
-      background-attachment: fixed;
       min-height: 100vh;
       overflow-x: hidden;
       position: relative;
     }
 
-    /* Gold overlay - Option A */
+    /* Gold overlay */
     body::before {
       content: '';
       position: fixed;
@@ -66,7 +114,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: 
+      background:
         radial-gradient(ellipse at 20% 10%, rgba(212, 175, 55, 0.1) 0%, transparent 40%),
         radial-gradient(ellipse at 80% 20%, rgba(212, 175, 55, 0.06) 0%, transparent 35%),
         radial-gradient(ellipse at 50% 50%, rgba(212, 175, 55, 0.04) 0%, transparent 50%),
@@ -86,6 +134,28 @@
       height: 2px;
       background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), transparent);
       z-index: 1000;
+    }
+
+    /* Skip link for accessibility */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--rrt-gold);
+      color: var(--rrt-bg);
+      padding: 8px 16px;
+      z-index: 200;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* Focus indicators */
+    *:focus-visible {
+      outline: 2px solid var(--rrt-gold);
+      outline-offset: 2px;
     }
 
     h1, h2, h3, h4 {
@@ -134,15 +204,24 @@
       opacity: 0.9;
     }
 
+    .nav-logo-img {
+      border-radius: 8px;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      vertical-align: middle;
+    }
+
     .nav-contact {
       font-size: 0.875rem;
       color: var(--rrt-muted-light);
       text-decoration: none;
       font-weight: 500;
-      padding: 0.5rem 1rem;
+      padding: 0.75rem 1.25rem;
       border: 1px solid rgba(255, 255, 255, 0.25);
       border-radius: 50px;
       transition: all 0.2s;
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
     }
 
     .nav-contact:hover {
@@ -288,6 +367,12 @@
       border-bottom: 1px solid var(--rrt-border);
     }
 
+    .studios-intro {
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+      color: var(--rrt-muted-light);
+    }
+
     .split-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -299,6 +384,10 @@
       .split-grid {
         grid-template-columns: 1fr 1fr;
         gap: 4rem;
+      }
+
+      body {
+        background-attachment: fixed;
       }
     }
 
@@ -416,6 +505,11 @@
       border-bottom: 1px solid var(--rrt-border);
     }
 
+    .who-subtitle {
+      text-align: center;
+      color: var(--rrt-muted);
+    }
+
     .audience-grid {
       display: flex;
       flex-wrap: wrap;
@@ -437,6 +531,52 @@
     .audience-tag:hover {
       background: var(--rrt-gold);
       color: var(--rrt-bg);
+    }
+
+    /* Testimonials */
+    .testimonials {
+      background: linear-gradient(180deg, var(--rrt-bg) 0%, var(--rrt-bg-secondary) 100%);
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .testimonial-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .testimonial-card {
+      background: var(--rrt-surface);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      border: 1px solid var(--rrt-border);
+    }
+
+    .testimonial-stars {
+      color: var(--rrt-gold);
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      letter-spacing: 2px;
+    }
+
+    .testimonial-text {
+      font-size: 0.9rem;
+      color: var(--rrt-muted-light);
+      margin-bottom: 1.25rem;
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--rrt-cream);
     }
 
     /* Contact Form - Gold Theme */
@@ -535,6 +675,35 @@
       transform: scale(0.98);
     }
 
+    .submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Form success/error states */
+    .form-success {
+      text-align: center;
+      padding: 2rem;
+      color: #1a1000;
+    }
+
+    .form-success h3 {
+      color: #1a1000;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-error {
+      background: rgba(242, 108, 79, 0.15);
+      border: 1px solid rgba(242, 108, 79, 0.4);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      margin-top: 0.75rem;
+      text-align: center;
+      color: #c0392b;
+      font-size: 0.9rem;
+    }
+
     /* Contact Info */
     .contact-info {
       text-align: center;
@@ -569,12 +738,27 @@
       line-height: 1.5;
     }
 
+    .disclaimer-link {
+      color: #3d2b00;
+      text-decoration: underline;
+    }
+
+    .disclaimer-link:hover {
+      opacity: 0.8;
+    }
+
     /* Footer */
     footer {
       background: var(--rrt-bg);
       border-top: 1px solid var(--rrt-border);
       padding: 3rem 1.5rem;
       text-align: center;
+    }
+
+    .footer-logo-img {
+      border-radius: 10px;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      margin-bottom: 1rem;
     }
 
     .footer-logo {
@@ -641,6 +825,52 @@
       color: var(--rrt-muted);
     }
 
+    /* Cookie Consent Banner */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--rrt-surface);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid var(--rrt-border);
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      z-index: 200;
+      font-size: 0.85rem;
+      color: var(--rrt-muted-light);
+    }
+
+    .cookie-banner.hidden {
+      display: none;
+    }
+
+    .cookie-btn {
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+
+    .cookie-btn-accept {
+      background: var(--rrt-gold);
+      color: var(--rrt-bg);
+    }
+
+    .cookie-btn-decline {
+      background: transparent;
+      color: var(--rrt-muted-light);
+      border: 1px solid var(--rrt-border-strong);
+    }
+
     /* Mobile optimizations */
     @media (max-width: 480px) {
       .hero {
@@ -672,197 +902,256 @@
   </style>
 </head>
 <body>
+  <a href="#contact" class="skip-link">Skip to main content</a>
+
   <!-- Navigation -->
-  <nav>
+  <nav aria-label="Main navigation">
     <a href="#" class="nav-logo">
-      <img src="rrt-logo.png" alt="Rhythmic Ribbon of Texas Logo" width="40" height="40" style="border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.5); vertical-align: middle; margin-right: 0.5rem;">
+      <img src="rrt-logo.png" alt="Rhythmic Ribbon of Texas Logo" width="40" height="40" class="nav-logo-img">
       <span style="font-family: var(--font-heading);">Rhythmic Ribbon of Texas</span>
     </a>
     <a href="tel:+17186892469" class="nav-contact">Call Now</a>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Multi-Sport Flexibility Training</h1>
-    <p class="hero-subtitle">Host a master class at your studio, gym, or facility. Intelligent flexibility for dancers, gymnasts, and athletes.</p>
-    <a href="#contact" class="cta-button">Book a Master Class</a>
-  </section>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Multi-Sport Flexibility Training</h1>
+      <p class="hero-subtitle">Designed by a former professional rhythmic gymnast and national team coach. Host a master class at your studio, gym, or facility.</p>
+      <a href="#contact" class="cta-button">Book a Master Class</a>
+    </section>
 
-  <!-- Trust Bar -->
-  <div class="trust-bar">
-    <div class="trust-item">
-      <svg class="trust-icon" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
-      <span>USAG Certified</span>
+    <!-- Trust Bar -->
+    <div class="trust-bar">
+      <div class="trust-item">
+        <svg class="trust-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 16l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z"/></svg>
+        <span>USAG Certified Since 1991</span>
+      </div>
+      <div class="trust-item">
+        <svg class="trust-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 16l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z"/></svg>
+        <span>National Team Coach</span>
+      </div>
+      <div class="trust-item">
+        <svg class="trust-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 16l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z"/></svg>
+        <span>USAG RG Texas State Chair</span>
+      </div>
+      <div class="trust-item">
+        <svg class="trust-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 16l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z"/></svg>
+        <span>#1 International Sports Academy</span>
+      </div>
     </div>
-    <div class="trust-item">
-      <svg class="trust-icon" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
-      <span>Texas State Chair</span>
-    </div>
-    <div class="trust-item">
-      <svg class="trust-icon" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
-      <span>15+ Years Experience</span>
-    </div>
+
+    <!-- For Studios Section -->
+    <section class="for-studios">
+      <div class="container">
+        <h2 class="section-title">Bring Expert Flexibility Training to Your Athletes</h2>
+        <div class="split-grid">
+          <div>
+            <p class="studios-intro">As a former professional rhythmic gymnast, flexibility and strengthening were essential components of Ella Rasin's daily training. When she transitioned into coaching, she recognized that every child has a different level of mobility, strength, and body awareness. That is how the Multi-Sport Flexibility program was developed - to address both flexibility and strength in a professional, systematic way while respecting individual differences.</p>
+            <ul class="benefit-list">
+              <li>Improves muscle elasticity, joint mobility, and coordination</li>
+              <li>Builds strength through full ranges of motion</li>
+              <li>Safe, progressive, and evidence-based methods</li>
+              <li>Proper alignment and long-term joint health</li>
+              <li>All levels welcome - beginner to advanced</li>
+            </ul>
+          </div>
+          <div>
+            <img src="rrt-flexibility.jpg" alt="Ella Rasin coaching a group flexibility class with athletes performing backbends on mats" class="flexibility-img" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy">
+      <div class="container">
+        <h2 class="section-title">The Approach</h2>
+        <div class="philosophy-content">
+          <blockquote class="philosophy-quote">"This program is not simply about becoming more flexible. It is about building intelligent flexibility supported by strength, stability, and technical understanding so each athlete can confidently work toward their personal goals."</blockquote>
+          <p class="philosophy-text">When properly trained, improved flexibility leads to better agility, speed, power output, and muscular control. Athletes experience better technique execution, reduced risk of injury, and higher overall performance. Every session uses safe, progressive, and evidence-based methods that prioritize proper alignment, controlled strengthening, and long-term joint health.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who It's For -->
+    <section class="who-section">
+      <div class="container">
+        <h2 class="section-title">Who Benefits</h2>
+        <p class="who-subtitle">All levels are welcome. Classes are structured by body part and adapted to each athlete's current ability.</p>
+        <div class="audience-grid">
+          <span class="audience-tag">Dance Studios</span>
+          <span class="audience-tag">Gymnastics Clubs</span>
+          <span class="audience-tag">Cheerleading Teams</span>
+          <span class="audience-tag">Figure Skaters</span>
+          <span class="audience-tag">Ballet Programs</span>
+          <span class="audience-tag">Football Programs</span>
+          <span class="audience-tag">Swimmers</span>
+          <span class="audience-tag">Volleyball Players</span>
+          <span class="audience-tag">Martial Arts / Karate</span>
+          <span class="audience-tag">Wrestling</span>
+          <span class="audience-tag">Individual Athletes</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- What You Get -->
+    <section class="offerings">
+      <div class="container">
+        <h2 class="section-title">What We Offer</h2>
+        <div class="offering-grid">
+          <div class="offering-card">
+            <div class="offering-icon">
+              <svg width="32" height="32" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="96" cy="80" r="36" stroke="#d4af37" stroke-width="12" fill="none"/>
+                <circle cx="176" cy="80" r="36" stroke="#d4af37" stroke-width="12" fill="none"/>
+                <path d="M16 224c0-44 36-80 80-80 16 0 30 4 44 12" stroke="#d4af37" stroke-width="12" stroke-linecap="round" fill="none"/>
+                <path d="M240 224c0-44-36-80-80-80-16 0-30 4-44 12" stroke="#d4af37" stroke-width="12" stroke-linecap="round" fill="none"/>
+              </svg>
+            </div>
+            <h3>Group Master Classes</h3>
+            <p>Full group sessions at your facility. Structured by body part - shoulders, back, hips, hamstrings, splits. For studios, gyms, and teams from dance to football to wrestling.</p>
+          </div>
+          <div class="offering-card">
+            <div class="offering-icon">
+              <svg width="32" height="32" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="128" cy="128" r="96" stroke="#d4af37" stroke-width="12" fill="none"/>
+                <circle cx="128" cy="128" r="64" stroke="#d4af37" stroke-width="8" fill="none"/>
+                <circle cx="128" cy="128" r="24" fill="#d4af37"/>
+              </svg>
+            </div>
+            <h3>One-on-One Training</h3>
+            <p>Individualized attention for athletes who prefer a personalized development plan. Ideal for rehabilitation, sport-specific goals, or accelerated progress.</p>
+          </div>
+          <div class="offering-card">
+            <div class="offering-icon">
+              <svg width="32" height="32" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="48" y="32" width="160" height="192" rx="12" stroke="#d4af37" stroke-width="12" fill="none"/>
+                <line x1="88" y1="80" x2="168" y2="80" stroke="#d4af37" stroke-width="8" stroke-linecap="round"/>
+                <line x1="88" y1="120" x2="168" y2="120" stroke="#d4af37" stroke-width="8" stroke-linecap="round"/>
+                <line x1="88" y1="160" x2="128" y2="160" stroke="#d4af37" stroke-width="8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Custom Curriculum</h3>
+            <p>Training programs designed around your athletes' sport, skill level, and specific needs. Whether your team plays football or performs ballet, we build the right plan.</p>
+          </div>
+          <div class="offering-card">
+            <div class="offering-icon">
+              <svg width="32" height="32" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="128" cy="96" r="40" stroke="#d4af37" stroke-width="10" fill="none"/>
+                <path d="M128 136L108 200H148L128 136Z" fill="#d4af37"/>
+                <path d="M88 200L68 240H188L168 200" stroke="#d4af37" stroke-width="10" stroke-linecap="round" fill="none"/>
+              </svg>
+            </div>
+            <h3>Proven Methods</h3>
+            <p>Evidence-based techniques developed over 35 years of professional training and coaching. Led by Ella Rasin - USAG-certified since 1991, National Team Coach, MSW.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <div class="container">
+        <h2 class="section-title">What Parents Say</h2>
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-text">"Miss Ella is the best!! I went to her stretching classes for years as a figure skater and she helped me improve both technical and artistic elements of my skating."</p>
+            <p class="testimonial-author">Mandy Chiang</p>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-text">"Mrs. Ella is an excellent stretching coach. She has helped my daughter with her flexibility for figure skating skills and gymnastics."</p>
+            <p class="testimonial-author">Wendy C</p>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-text">"She shows my dancer how to stretch properly and why she needs certain stretch and strength techniques. I definitely recommend to anyone looking for high quality training."</p>
+            <p class="testimonial-author">Jennifer Allen</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <h2 class="section-title">Get Started</h2>
+        <p class="section-subtitle">Ready to bring expert flexibility training to your athletes?</p>
+        <div class="form-wrapper">
+          <h3 class="form-title">Schedule a Master Class</h3>
+          <form id="contact-form" action="https://formspree.io/f/xpwzgvvn" method="POST">
+            <!-- Honeypot for spam protection -->
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+            <!-- Hidden UTM/gclid fields -->
+            <input type="hidden" name="utm_source" id="utm_source">
+            <input type="hidden" name="utm_medium" id="utm_medium">
+            <input type="hidden" name="utm_campaign" id="utm_campaign">
+            <input type="hidden" name="gclid" id="gclid">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="business">Studio, Gym, or Facility Name *</label>
+                <input type="text" id="business" name="business" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" required>
+              </div>
+              <div class="form-group">
+                <label for="interest">Interested In</label>
+                <select id="interest" name="interest">
+                  <option value="" disabled selected>Please select...</option>
+                  <option value="group-master-class">Group Master Class</option>
+                  <option value="one-on-one">One-on-One Training</option>
+                  <option value="both">Both</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">Message (Optional)</label>
+              <textarea id="message" name="message" placeholder="Tell us about your athletes, their goals, and any specific needs..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn" id="submit-btn">Send Inquiry</button>
+            <div id="form-error" class="form-error" style="display: none;"></div>
+          </form>
+          <div id="form-success" class="form-success" style="display: none;">
+            <h3>Thank You!</h3>
+            <p>We received your inquiry and will be in touch within 24 hours.</p>
+          </div>
+          <div class="contact-info">
+            <p>Or reach out directly:</p>
+            <p>
+              <a href="tel:+17186892469" class="contact-link phone-link">Phone: (718) 689-2469</a>
+            </p>
+            <p>
+              <a href="mailto:Rhythmicribbonoftexas@gmail.com" class="contact-link">Rhythmicribbonoftexas@gmail.com</a>
+            </p>
+          </div>
+          <p class="form-disclaimer">Physical activity involves inherent risk. Please consult your physician before beginning any exercise program. By submitting this form, you acknowledge that you have read and agree to our <a href="liability-waiver.html" target="_blank" rel="noopener" class="disclaimer-link">Liability Waiver</a> and <a href="privacy-policy.html" target="_blank" rel="noopener" class="disclaimer-link">Privacy Policy</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-banner" class="cookie-banner hidden">
+    <span>We use cookies to measure ad performance and improve your experience. <a href="privacy-policy.html#cookies" class="disclaimer-link" style="color: var(--rrt-gold);">Learn more</a></span>
+    <button class="cookie-btn cookie-btn-accept" id="cookie-accept">Accept</button>
+    <button class="cookie-btn cookie-btn-decline" id="cookie-decline">Decline</button>
   </div>
-
-  <!-- For Studios Section -->
-  <section class="for-studios">
-    <div class="container">
-      <h2 class="section-title">Bring Expert Flexibility Training to Your Athletes</h2>
-      <div class="split-grid">
-        <div>
-          <p style="margin-bottom: 1.5rem; font-size: 1.05rem; color: var(--rrt-muted-light);">Ella Rasin brings progressive, evidence-based flexibility methods directly to your facility. Her approach combines intelligent flexibility with strength, stability, and technical understanding for long-term joint health.</p>
-          <ul class="benefit-list">
-            <li>Group master classes at your studio or gym</li>
-            <li>Proper alignment and controlled strengthening</li>
-            <li>Progressive, science-backed techniques</li>
-            <li>Customized for dancers, gymnasts, and athletes</li>
-            <li>One-on-one training also available</li>
-          </ul>
-        </div>
-        <div>
-          <img src="rrt-flexibility.jpg" alt="RRT athlete demonstrating flexibility training" class="flexibility-img">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Philosophy Section -->
-  <section class="philosophy">
-    <div class="container">
-      <h2 class="section-title">The Approach</h2>
-      <div class="philosophy-content">
-        <p class="philosophy-quote">"Flexibility isn't just about stretching. It's about building strength through ranges of motion, understanding biomechanics, and developing body awareness that supports long-term athletic development."</p>
-        <p class="philosophy-text">Every athlete's body is different. The goal isn't just to increase range of motion, but to develop flexibility that is functional, strong, and sustainable. This means combining flexibility training with proper strengthening, alignment correction, and movement education.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Who It's For -->
-  <section class="who-section">
-    <div class="container">
-      <h2 class="section-title">Who Benefits</h2>
-      <p style="text-align: center; color: var(--rrt-muted);">Designed for athletes and active individuals looking to improve performance and prevent injury.</p>
-      <div class="audience-grid">
-        <span class="audience-tag">Dance Studios</span>
-        <span class="audience-tag">Gymnastics Clubs</span>
-        <span class="audience-tag">Cheerleading Teams</span>
-        <span class="audience-tag">Figure Skaters</span>
-        <span class="audience-tag">Swimmers</span>
-        <span class="audience-tag">Volleyball Players</span>
-        <span class="audience-tag">Martial Artists</span>
-        <span class="audience-tag">Individual Athletes</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- What You Get -->
-  <section class="offerings">
-    <div class="container">
-      <h2 class="section-title">What We Offer</h2>
-      <div class="offering-grid">
-        <div class="offering-card">
-          <div class="offering-icon">
-            <svg width="32" height="32" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="128" cy="96" r="48" stroke="#d4af37" stroke-width="12" fill="none"/>
-              <path d="M32 224c0-53 43-96 96-96s96 43 96 96" stroke="#d4af37" stroke-width="12" stroke-linecap="round" fill="none"/>
-            </svg>
-          </div>
-          <h3>Group Master Classes</h3>
-          <p>Full group sessions at your facility. Perfect for studios, gyms, and teams looking for a flexibility boost.</p>
-        </div>
-        <div class="offering-card">
-          <div class="offering-icon">
-            <svg width="32" height="32" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="128" cy="128" r="96" stroke="#d4af37" stroke-width="12" fill="none"/>
-              <circle cx="128" cy="128" r="64" stroke="#d4af37" stroke-width="8" fill="none"/>
-              <circle cx="128" cy="128" r="24" fill="#d4af37"/>
-            </svg>
-          </div>
-          <h3>One-on-One Training</h3>
-          <p>Individualized attention for athletes with specific goals or those recovering from injury.</p>
-        </div>
-        <div class="offering-card">
-          <div class="offering-icon">
-            <svg width="32" height="32" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="48" y="32" width="160" height="192" rx="12" stroke="#d4af37" stroke-width="12" fill="none"/>
-              <line x1="88" y1="80" x2="168" y2="80" stroke="#d4af37" stroke-width="8" stroke-linecap="round"/>
-              <line x1="88" y1="120" x2="168" y2="120" stroke="#d4af37" stroke-width="8" stroke-linecap="round"/>
-              <line x1="88" y1="160" x2="128" y2="160" stroke="#d4af37" stroke-width="8" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3>Custom Curriculum</h3>
-          <p>Training tailored to your athletes' sport, skill level, and specific needs.</p>
-        </div>
-        <div class="offering-card">
-          <div class="offering-icon">
-            <svg width="32" height="32" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M128 24L144 84H208L156 120L168 180L128 148L88 180L100 120L48 84H112L128 24Z" fill="#d4af37"/>
-            </svg>
-          </div>
-          <h3>Proven Methods</h3>
-          <p>Evidence-based flexibility techniques developed over 15+ years of coaching.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Form -->
-  <section class="contact-section" id="contact">
-    <div class="container">
-      <h2 class="section-title">Get Started</h2>
-      <p class="section-subtitle">Ready to bring expert flexibility training to your athletes?</p>
-      <div class="form-wrapper">
-        <h3 class="form-title">Schedule a Master Class</h3>
-        <form action="https://formspree.io/f/xpwzgvvn" method="POST">
-          <div class="form-grid">
-            <div class="form-group">
-              <label for="name">Your Name *</label>
-              <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-              <label for="business">Studio, Gym, or Facility Name *</label>
-              <input type="text" id="business" name="business" required>
-            </div>
-            <div class="form-group">
-              <label for="email">Email Address *</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone Number *</label>
-              <input type="tel" id="phone" name="phone" required>
-            </div>
-            <div class="form-group">
-              <label for="interest">Interested In</label>
-              <select id="interest" name="interest">
-                <option value="group-master-class">Group Master Class</option>
-                <option value="one-on-one">One-on-One Training</option>
-                <option value="both">Both</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="message">Message (Optional)</label>
-            <textarea id="message" name="message" placeholder="Tell us about your athletes, their goals, and any specific needs..."></textarea>
-          </div>
-          <button type="submit" class="submit-btn">Send Inquiry</button>
-        </form>
-        <div class="contact-info">
-          <p>Or reach out directly:</p>
-          <p>
-            <a href="tel:+17186892469" class="contact-link">Phone: (718) 689-2469</a>
-          </p>
-          <p>
-            <a href="mailto:Rhythmicribbonoftexas@gmail.com" class="contact-link">Rhythmicribbonoftexas@gmail.com</a>
-          </p>
-        </div>
-        <p class="form-disclaimer">Physical activity involves inherent risk. Please consult your physician before beginning any exercise program. By submitting this form, you acknowledge that you have read and agree to our <a href="liability-waiver.html" style="color: var(--rrt-gold);">Liability Waiver</a> and <a href="privacy-policy.html" style="color: var(--rrt-gold);">Privacy Policy</a>.</p>
-      </div>
-    </div>
-  </section>
 
   <!-- Footer -->
   <footer>
-    <img src="rrt-logo.png" alt="RRT Logo" width="60" height="60" style="border-radius: 10px; border: 1px solid rgba(212, 175, 55, 0.5); margin-bottom: 1rem;">
+    <img src="rrt-logo.png" alt="RRT Logo" width="60" height="60" class="footer-logo-img">
     <div class="footer-logo">Rhythmic Ribbon of Texas</div>
     <p class="footer-tagline">Serving the Dallas-Fort Worth Area</p>
     <div class="footer-links">
@@ -871,8 +1160,6 @@
       <a href="mailto:Rhythmicribbonoftexas@gmail.com">Email</a>
     </div>
     <div class="footer-legal">
-      <a href="terms-of-service.html">Terms</a>
-      <span class="separator">|</span>
       <a href="privacy-policy.html">Privacy</a>
       <span class="separator">|</span>
       <a href="liability-waiver.html">Liability</a>
@@ -881,5 +1168,112 @@
     </div>
     <p class="footer-copy">McKinney, Texas</p>
   </footer>
+
+  <script>
+    // UTM/gclid capture
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      ['utm_source', 'utm_medium', 'utm_campaign', 'gclid'].forEach(function(key) {
+        var val = params.get(key);
+        if (val) {
+          var el = document.getElementById(key);
+          if (el) el.value = val;
+        }
+      });
+    })();
+
+    // AJAX form submission
+    (function() {
+      var form = document.getElementById('contact-form');
+      var btn = document.getElementById('submit-btn');
+      var errorDiv = document.getElementById('form-error');
+      var successDiv = document.getElementById('form-success');
+
+      if (!form) return;
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+        errorDiv.style.display = 'none';
+
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        }).then(function(response) {
+          if (response.ok) {
+            form.style.display = 'none';
+            successDiv.style.display = 'block';
+            // Fire conversion event if gtag available
+            // if (typeof gtag === 'function') {
+            //   gtag('event', 'conversion', { send_to: 'AW-XXXXXXXXX/XXXXXXXX' });
+            // }
+          } else {
+            throw new Error('Form submission failed');
+          }
+        }).catch(function() {
+          errorDiv.textContent = 'Something went wrong. Please try again or contact us directly.';
+          errorDiv.style.display = 'block';
+          btn.disabled = false;
+          btn.textContent = 'Send Inquiry';
+        });
+      });
+    })();
+
+    // Phone click tracking
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (typeof gtag === 'function') {
+          gtag('event', 'click_to_call', { event_category: 'engagement' });
+        }
+      });
+    });
+
+    // Cookie consent
+    (function() {
+      var banner = document.getElementById('cookie-banner');
+      var consent = localStorage.getItem('cookie_consent');
+      if (!consent && banner) {
+        banner.classList.remove('hidden');
+      }
+      if (consent === 'accepted') {
+        loadTrackingScripts();
+      }
+
+      var acceptBtn = document.getElementById('cookie-accept');
+      var declineBtn = document.getElementById('cookie-decline');
+
+      if (acceptBtn) {
+        acceptBtn.addEventListener('click', function() {
+          localStorage.setItem('cookie_consent', 'accepted');
+          banner.classList.add('hidden');
+          loadTrackingScripts();
+        });
+      }
+      if (declineBtn) {
+        declineBtn.addEventListener('click', function() {
+          localStorage.setItem('cookie_consent', 'declined');
+          banner.classList.add('hidden');
+        });
+      }
+
+      function loadTrackingScripts() {
+        // Uncomment and replace with your IDs when ready:
+        // var gtagScript = document.createElement('script');
+        // gtagScript.async = true;
+        // gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+        // document.head.appendChild(gtagScript);
+        // gtagScript.onload = function() {
+        //   window.dataLayer = window.dataLayer || [];
+        //   function gtag(){dataLayer.push(arguments);}
+        //   window.gtag = gtag;
+        //   gtag('js', new Date());
+        //   gtag('config', 'G-XXXXXXXXXX');
+        //   gtag('config', 'AW-XXXXXXXXX');
+        // };
+      }
+    })();
+  </script>
 </body>
 </html>
